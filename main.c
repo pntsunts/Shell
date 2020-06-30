@@ -6,7 +6,7 @@
 /*   By: pntsunts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/30 08:41:31 by pntsunts          #+#    #+#             */
-/*   Updated: 2020/06/30 09:25:20 by pntsunts         ###   ########.fr       */
+/*   Updated: 2020/06/30 10:45:33 by pntsunts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "minishell.h"
@@ -47,6 +47,8 @@ static int check_exec(char *str[])
 		print_data();
 		return (1);
 	}
+	else if (ft_strcmp(*str, "echo") == 0)
+		return (ft_echo(str));
 	else 
 		return (0);
 }

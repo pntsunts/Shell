@@ -1,32 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   ft_echo.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pntsunts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/24 11:05:26 by pntsunts          #+#    #+#             */
-/*   Updated: 2020/06/30 10:44:09 by pntsunts         ###   ########.fr       */
+/*   Created: 2020/06/30 10:42:18 by pntsunts          #+#    #+#             */
+/*   Updated: 2020/06/30 10:42:51 by pntsunts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-#define MINISHELL_H
+#include "minishell.h"
 
-# include "libft/libft.h"
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <sys/wait.h>
+int   ft_echo(char *str[])
+{
+	char store;
 
-#define	BUFF_SIZE 32
+	int run;
 
-char **Data;
-
-int		get_next_line(const int fd, char **line);
-size_t  datalen(char *env[]);
-void    get_data(char *env[]);
-int 	ft_fork(char *path, char *args[]);
-void    print_data(void);
-int		ft_echo(char *str[]);
-
-#endif
+	store = 0;
+	run = 0;
+	str++;
+	/*if (*str && (*str)[run++] == '-')
+	{
+		while ((*str)[run] == 'n')
+			run++;
+		if (!(*str)[run])
+		{
+			store = 'n';
+			str++;
+		}
+	}*/
+	while (*str)
+	{
+		ft_putstr(*str++);
+		if (*str)
+			ft_putchar(' ');
+	}
+	if (!store)
+		write(1, "\n", 1);
+	return (1);
+}
