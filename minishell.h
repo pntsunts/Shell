@@ -6,7 +6,7 @@
 /*   By: pntsunts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/24 11:05:26 by pntsunts          #+#    #+#             */
-/*   Updated: 2020/06/30 10:44:09 by pntsunts         ###   ########.fr       */
+/*   Updated: 2020/06/30 13:20:09 by pntsunts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,7 @@ void    get_data(char *env[]);
 int 	ft_fork(char *path, char *args[]);
 void    print_data(void);
 int		ft_echo(char *str[]);
+size_t  envlen(char **str);
+int		checkstr(char **str);
 
 #endif

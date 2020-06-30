@@ -6,21 +6,10 @@
 /*   By: pntsunts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/30 08:41:31 by pntsunts          #+#    #+#             */
-/*   Updated: 2020/06/30 10:45:33 by pntsunts         ###   ########.fr       */
+/*   Updated: 2020/06/30 13:20:40 by pntsunts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "minishell.h"
-
-/*static int Process(char *str[], int run)
-{
-	pid_t proc;
-
-	proc = fork();
-	if (proc == 0)
-	{
-
-	}
-}*/
 
 static char *get_lines()
 {
@@ -49,6 +38,8 @@ static int check_exec(char *str[])
 	}
 	else if (ft_strcmp(*str, "echo") == 0)
 		return (ft_echo(str));
+	else if (ft_strcmp(*str, "setenv") == 0)
+		return (checkstr(str));
 	else 
 		return (0);
 }
